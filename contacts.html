@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Всеволод Т-П">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <title>Личный блог — Контакты</title>
+</head>
+<body>
+    <header>
+        <h1>Личный блог — Контакты</h1>
+
+        <nav aria-label="Основная навигация">
+            <table style="width: 490px;" border="1">
+                <tr>
+                    <td style="text-align: center;"><a href="index.html">Главная</a></td>
+                    <td style="text-align: center;"><a href="about_me.html">Обо мне</a></td>
+                    <td style="text-align: center;"><a href="contacts.html" aria-current="page">Контакты</a></td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="contact-form-title">
+            <h2 id="contact-form-title">Форма обратной связи</h2>
+
+            <form action="" method="post">
+                <p>
+                    <label for="name">Имя</label>
+                    <input 
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Введите имя"
+                        required
+                        minlength="2"
+                        maxlength="50">
+                </p>
+
+                <p>
+                    <label for="email">Почта</label>
+                    <input 
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="inbox@mail.ru"
+                        required
+                        maxlength="400">
+                </p>
+
+                <p>
+                    <label for="topic">Тема</label>
+                    <select name="topic" id="topic" required>
+                        <option value="" selected disabled>Выберите тему</option>
+                        <option value="question">Вопрос</option>
+                        <option value="feedback">Отзыв</option>
+                        <option value="proposition">Предложение</option>
+                        <option value="collaboration">Сотрудничество</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="message">Сообщение</label><br>
+                    <textarea 
+                        name="message" 
+                        id="message" 
+                        placeholder="Введите сообщение" 
+                        required
+                        maxlength="500"
+                        rows="6"
+                        cols="40"></textarea>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">Я согласен на обработку моих данных</label>
+                </p>
+
+                <p>
+                    <button type="submit">Отправить</button>
+                </p>
+            </form>
+        </section>
+
+        <section aria-labelledby="map-title">
+            <h2 id="map-title">Я тут↓</h2>
+
+            <table border="1">
+                <tr>
+                    <td>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d940.0880200176613!2d37.81991264129186!3d55.9161096218582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1774373413807!5m2!1sru!2sru"
+                            width="490"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen
+                            loading="lazy"
+                            title="Карта с местоположением автора"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Личный блог</p>
+    </footer>
+</body>
+</html>

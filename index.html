@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +11,10 @@
 <body>
     <header>
         <h1>Добро пожаловать на мой блог!</h1>
-            <nav>
-                <table border="1" style="width: 490px;">
+            <nav aria-label="Основная навигация">
+                <table style="width: 490px;" border="1">
                     <tr>
-                        <td style="text-align: center;" ><a href="index.html">Главная</a></td>
+                        <td style="text-align: center;"><a href="index.html" aria-current="page">Главная</a></td>
                         <td style="text-align: center;"><a href="about_me.html">Обо мне</a></td>
                         <td style="text-align: center;"><a href="contacts.html">Контакты</a></td>
                     </tr>
@@ -23,7 +23,7 @@
     </header>
 
     <main>
-        <section aria-label="Welcome">
+        <section>
             <h2>Добро пожаловать!</h2>
             <p>
                 Доброго времени суток, обывателям моей страницы! Это мой блог,<br>
@@ -49,7 +49,7 @@
                     ошибки допустил в начале. Покажу, как даже простая разметка может<br>
                     превратиться в аккуратную и понятную структуру сайта.
                 </p>
-                <a href="Stub_blank.html">
+                <a href="Stub_blank.html" aria-label="Читать статью Первые шаги в HTML">
                     Читать далее
                 </a>
             </article>
@@ -67,7 +67,7 @@
                    Покажу на простых примерах, как сделать разметку понятной не только<br>
                    разработчику, но и браузеру.
                 </p>
-                <a href="Stub_blank.html">
+                <a href="Stub_blank.html" aria-label="Читать статью Семантика в HTML">
                     Читать далее
                 </a>
             </article>
@@ -86,7 +86,7 @@
                    между собой. Отдельно затрону базовую валидацию и типичные ошибки,<br>которые
                    часто допускают в начале.
                 </p>
-                <a href="Stub_blank.html">
+                <a href="Stub_blank.html" aria-label="Читать статью Формы в HTML">
                     Читать далее
                 </a>
             </article>
