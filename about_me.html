@@ -9,23 +9,15 @@
 </head>
 <body>
     <header>
-        <h1 id="page-title">Личный блог — Обо мне</h1>
-
         <nav aria-label="Основная навигация">
-            <table style="width: 490px;" border="1">
-                <tr>
-                    <td style="text-align: center;">
-                        <a href="index.html">Главная</a>
-                    </td>
-                    <td style="text-align: center;">
-                        <a href="about_me.html" aria-current="page">Обо мне</a>
-                    </td>
-                    <td style="text-align: center;">
-                        <a href="contacts.html">Контакты</a>
-                    </td>
-                </tr>
-            </table>
+            <ul>
+                <li><a href="index.html" aria-current="page">Главная</a></li>
+                <li class="active"><a href="about_me.html">Обо мне</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><button class="burger" id="burger_btn" aria-label="Открыть меню">привет ☰</button></li>
+            </ul>
         </nav>
+        <h1 id="page-title">Личный блог — Обо мне</h1>
     </header>
 
     <main aria-labelledby="page-title">
