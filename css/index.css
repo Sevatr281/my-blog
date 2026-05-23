@@ -1,37 +1,183 @@
-body{
-    margin: 0;
-    min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
 
-    background-image: url("/images/fon.png");
+.entry { 
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 100%;
+    height: 600px;
+    margin-top: 0px;
+    margin: 0px auto 0;
+    padding: 0 35px 65px; 
+
+    /* border: 2px solid black; */
+    background-image: url('/images/board.png');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: scroll;
+    background-position: center;
+    background-size: 100% 100%;
+
+    text-align: center;          /* это уже по горизонтали */
+
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #929292,
+                 0 0 20px #000000;
 }
 
-main{
-    padding: 0 25px;
+.entry h1{
+    font-weight: 900;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 
+.entry  p{
+    text-align: justify;
+    margin: 30px auto 0;
 }
-.big_title{
+
+main h1{
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+
+    align-self: center;
+    /* margin: 20px 0; */
+    margin-top: 100px;
+    padding: 75px 68px;
+
+    /* border: 2px solid black; */
     text-align: center;
+
+    background-image: url('/images/h1fon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain ;
+}
+
+.news {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 900px) 1fr;
+    row-gap: 40px;
+    align-items: start;
+    
+}
+
+#latest-articles {
+    
+    width: 90%;
+    margin: 150px auto 30px;
+    padding: 8px 16px;
+
+    color: black;
+    background-color: rgb(243, 221, 166);
+    border-radius: 100px;
+    text-align: center;
+}
+
+.post {
+    grid-column: 2;
+    width: 100%;
+    padding: 60px 70px;
+    color: black;
+    font-size: 20px;
+    background-image: url('/images/news_paper.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    line-height: 1.6;
+}
+
+.post h3{
+    text-align: center;
+    font-size: 24px;
+    font-weight:bolder;
+    padding: 20px 0px;
+    color: red;
+}
+
+.post p{
+  font-family: "Marck Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.post .link {
     display: inline-block;
-    border: 1px solid black;
-    border-radius: 5px;
+    margin-top: 25px;
+    /* border: 2px solid black; */
+    padding: 20px 0px;
+
+     font-family: "Marck Script", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.news{
-    display: flex;
-    flex-direction: column;
+#aside-title {
+    margin: 0;
+    padding: 50px 0 20px 5%;
+    background-color: rgba(0, 0, 0, 0.562);
 }
 
-.news .post{
-    padding: 20px;
-    display: block;
-    border: 5px solid black;
+#aside-title > *:last-child {
+    margin-bottom: 0;
+}
+
+#aside-title h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 0;
+}
+
+@media (min-width: 1400px) {
+
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+
+        main h1{
+            margin-top: 0;
+            padding: 5vw ;
+            width: auto;
+        }
+
+        .entry {
+        margin-top: 0;
+        background-image: url('/images/board.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+        padding: 25% 3vw 5% ;
+        width: 60vw;
+        height: 35vh;
+        }
+
+    .news{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-bottom: 50px;
+        padding: 25px 5% 0;
+    }
+
+    .post{
+        grid-column: auto;
+    }
+
+    #aside-title{
+    margin: 0;
+    padding: 50px 0 50px 5%;
+    background-color: rgba(0, 0, 0, 0.562);
+    }
+
+    #aside-title h2{
+    margin: 0 0 30px 0;
+    }
+
+    footer{
+    margin: 0;
+    }
+
 }

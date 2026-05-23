@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/* Общая структура страницы */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: clamp(100px, 5vw, 150px);
+    padding: clamp(24px, 5vw, 64px) 16px;
+
+    overflow-x: hidden;
+}
+
+/* Общий стиль декоративных заголовков */
+.title_h2 {
+    color: black;
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+
+    width: min(90vw, 900px);
+    min-height: clamp(90px, 18vw, 140px);
+
+    margin: 0 auto;
+    padding: clamp(16px, 4vw, 32px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-image: url('../images/h1fon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+/* Главный заголовок страницы */
+#page-title {
+    margin-bottom: 0;
+}
+
+/* Блок "Био" */
+.bio {
+    width: 100%;
+    max-width: 1100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: clamp(24px, 4vw, 40px);
+    margin-bottom: clamp(24px, 4vh, 48px);
+}
+
+/* Постер */
+.poster {
+    display: block;
+
+    width: min(80vw, 720px);
+    margin: 0 auto;
+}
+
+.poster img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    -webkit-mask-image:
+        linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent),
+        linear-gradient(to bottom, transparent, black 40px, black calc(100% - 40px), transparent);
+    -webkit-mask-composite: source-in;
+
+    mask-image:
+        linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent),
+        linear-gradient(to bottom, transparent, black 40px, black calc(100% - 40px), transparent);
+    mask-composite: intersect;
+}
+
+/* Описание */
+.description {
+    font-family: "Marck Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+    width: min(100%, 900px);
+    /* margin: 0 auto; */
+
+    padding:
+        clamp(100px, 8vw, 150px)
+        clamp(170px, 12vw, 200px)
+        clamp(100px, 8vw, 150px)
+        clamp(28px, 10vw, 100px);
+
+    color: black;
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
+    line-height: 1.6;
+
+    background-image: url('../images/description1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+/* Блок "Навыки" */
+
+.skills {
+    width: 100%;
+    max-width: 1100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.list-skills {
+    align-self: center;
+
+    width: min(100%, 900px);
+
+    padding: clamp(32px, 8vw, 70px);
+    /* margin-bottom: clamp(24px, 4vh, 48px); */
+
+    color: black;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+
+    background-image: url('../images/skill_list.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+/* Заголовок внутри блока навыков */
+.list-skills > .title_h2 {
+    width: 100%;
+    max-width: 720px;
+
+    margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.list-skills h3 {
+    margin: clamp(20px, 4vw, 36px) 0 12px;
+
+    color: black;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    line-height: 1.2;
+}
+
+.list-skills h3:first-of-type {
+    margin-top: 0;
+}
+
+.list-skills ul {
+    margin: 0 0 clamp(16px, 3vw, 28px);
+    padding-left: 1.4em;
+}
+
+.list-skills ul:last-child {
+    margin-bottom: 0;
+}
+
+.list-skills li {
+    margin-bottom: 8px;
+}
+
+/* Блок "Текущие цели" */
+.goals {
+    display: flex;
+    flex-direction: column;
+
+    width: min(100%, 900px);
+
+    color: black;
+
+
+}
+
+/* Заголовок внутри блока целей */
+.goals > .title_h2 {
+    width: 100%;
+    max-width: 720px;
+
+    margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.goals-content {
+
+    width: min(90vw, 900px);
+    min-height: min(15vh, 900px);
+
+    padding: 32px 30vw 30px 10vw;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+
+    background-image: url('../images/goals-title.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.goals-content p {
+    margin: 0;
+
+    color: black;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+    
+}
+
+/* Большие экраны */
+@media (min-width: 1400px) {
+    main {
+        display: grid;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-areas:
+            "page-title page-title page-title"
+            "bio        bio        bio"
+            "skills     skills     goals";
+
+        column-gap: clamp(32px, 4vw, 72px);
+        row-gap: 64px;
+
+        align-items: start;
+
+        padding: 0px 5%;
+    }
+
+    #page-title {
+        grid-area: page-title;
+        justify-self: center;
+
+        width: min(50vw, 900px);
+        margin: 0;
+    }
+
+    /* ===================== */
+    /* БИО */
+    /* ===================== */
+
+    .bio {
+        grid-area: bio;
+
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        margin-bottom: 3%;
+
+        display: grid;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-areas:
+            "bio-title bio-title   bio-title"
+            "poster    description description";
+
+        column-gap: clamp(32px, 4vw, 72px);
+        row-gap: 40px;
+
+        align-items: start;
+    }
+
+    #bio-title {
+        grid-area: bio-title;
+        justify-self: center;
+
+        width: min(50vw, 900px);
+        margin: 0;
+    }
+
+    .title_h2{
+        padding: 0 00%;
+    }
+
+    .poster {
+        grid-area: poster;
+
+        width: 100%;
+        max-width: 480px;
+
+        justify-self: center;
+        align-self: start;
+
+        margin: 0;
+    }
+
+    .poster img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .description {
+        grid-area: description;
+
+        width: 100%;
+        max-width: none;
+
+        justify-self: stretch;
+        align-self: stretch;
+
+        margin: 0;
+        padding: 15vh 12vw 15vh 7vw;
+
+        font-size: 1.25rem;
+    }
+
+    /* ===================== */
+    /* НАВЫКИ */
+    /* ===================== */
+
+    .skills {
+        grid-area: skills;
+
+        width: 100%;
+        max-width: none;
+
+        justify-self: stretch;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 36px;
+
+    }
+
+    .skills > .title_h2 {
+        width: min(100%, 760px);
+        min-height: 140px;
+
+        margin: 0;
+    }
+
+    .list-skills {
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+        padding: 70px 10%;
+
+        font-size: 1.2rem;
+    }
+
+    .list-skills h3 {
+        font-size: 2rem;
+    }
+
+    /* ===================== */
+    /* ТЕКУЩИЕ ЦЕЛИ */
+    /* ===================== */
+
+    .goals {
+        grid-area: goals;
+
+        width: 100%;
+        max-width: none;
+        
+        justify-self: stretch;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 36px;
+    }
+
+    .goals > .title_h2 {
+        width: 100%;
+        max-width: none;
+        min-height: 140px;
+
+        margin: 0;
+    }
+
+    .goals-content {
+        width: 100%;
+        max-width: none;
+
+        min-height: 100px;
+
+        margin: 0;
+        padding: 50px 130px 50px 60px;
+    }
+
+    .goals-content p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+}
