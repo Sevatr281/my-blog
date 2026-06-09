@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -8,111 +8,169 @@
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="css/general_styles.css">
     <link rel="stylesheet" href="css/index.css">
-    
+    <script src="js/main.js" defer></script>
     <title>Главная</title>
 </head>
 
 <body>
     <header>
         <div class="wrapper">
-            <img src="images/logo.png" alt="Логотип">
+            <a href="index.html" class="logo-link" aria-label="На главную">
+                <img src="images/logo.png" alt="Логотип" class="logo">
+            </a>
+
             <nav class="nav" aria-label="Основная навигация">
-                <button class="burger" id="burger_btn" aria-label="Открыть меню">☰</button>
-                <ul>
-                    <li class="active"><a href="index.html" aria-current="page">Главная</a></li>
-                    <li><a href="about_me.html">Обо мне</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
+                <button class="burger" id="burger_btn" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
+                <ul class="nav-list">
+                    <li class="nav-item active"><a href="index.html" aria-current="page">Главная</a></li>
+                    <li class="nav-item"><a href="about_me.html">Обо мне</a></li>
+                    <li class="nav-item"><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main class="main-home">
         <h1 class="big_title">Добро пожаловать на мой блог!</h1>
-        <section class="entry">
 
-            <h2>Добро пожаловать!</h2>
-            <p>Доброго времени суток, обывателям моей страницы! Это мой блог,
+        <section class="entry" aria-labelledby="welcome-title">
+            <h2 id="welcome-title">Добро пожаловать!</h2>
+            <p>
+                Доброго времени суток, обывателям моей страницы! Это мой блог,
                 в котором я собираюсь делиться с вами моими мыслями, идеями,
                 опытом и всем, что мне покажется интересным. Приятного просмотра!
             </p>
         </section>
+
         <div class="container">
             <h2 id="latest-articles">Последние статьи</h2>
-            <section class="news">
-                
-                    <article aria-labelledby="post1" class="post">
 
-                        <h3 id="post1">Первые шаги в HTML</h3>
+            <div class="article-filters" aria-label="Фильтр статей по категориям">
+                <button class="filter-button active" type="button" data-filter="all">Все</button>
+                <button class="filter-button" type="button" data-filter="html">HTML</button>
+                <button class="filter-button" type="button" data-filter="semantics">Семантика</button>
+                <button class="filter-button" type="button" data-filter="forms">Формы</button>
+            </div>
 
-                        <p>Мои первые шаги в HTML начались с понимания простой, но важной
-                            структуры страницы: html, head, body.
-                            Сначала это выглядело как набор непонятных тегов, но уже после
-                            нескольких практических примеров стало ясно, как из них складывается
-                            полноценная веб-страница.
-                        </p>
-                            
-                        <p>В этой статье я расскажу, как познакомился с основными
-                            элементами — заголовками, абзацами, списками и ссылками — и какие
-                            ошибки допустил в начале. Покажу, как даже простая разметка может
-                            превратиться в аккуратную и понятную структуру сайта.
-                        </p>
+            <section class="news" aria-labelledby="latest-articles">
+                <article aria-labelledby="post1" class="post" data-article-id="html-start" data-category="html">
+                    <h3 id="post1">Первые шаги в HTML</h3>
+                    <p>
+                        Мои первые шаги в HTML начались с понимания простой, но важной
+                        структуры страницы: html, head, body. Сначала это выглядело как
+                        набор непонятных тегов, но уже после нескольких практических
+                        примеров стало ясно, как из них складывается полноценная веб-страница.
+                    </p>
+                    <p>
+                        В этой статье я расскажу, как познакомился с основными элементами —
+                        заголовками, абзацами, списками и ссылками — и какие ошибки допустил
+                        в начале.
+                    </p>
+                    <span class="link">
+                        <a href="Stub_blank.html" aria-label="Читать статью Первые шаги в HTML">Читать далее</a>
+                    </span>
 
-                        <span class="link">
-                            <a href="Stub_blank.html" aria-label="Читать статью Первые шаги в HTML">
-                                Читать далее
-                            </a>
-                        </span>
-                    </article>
+                    <div class="article-actions">
+                        <button class="like-button" type="button" aria-pressed="false">♡ Лайк</button>
+                    </div>
 
-                    <article aria-labelledby="post2" class="post">
+                    <section class="comments" aria-labelledby="comments-html-start">
+                        <h4 id="comments-html-start">Комментарии</h4>
+                        <form class="comment-form">
+                            <label>
+                                Имя
+                                <input type="text" name="commentName" placeholder="Твоё имя" required minlength="2" maxlength="30">
+                            </label>
+                            <label>
+                                Комментарий
+                                <textarea name="commentText" placeholder="Напиши комментарий" required minlength="3" maxlength="300" rows="3"></textarea>
+                            </label>
+                            <button type="submit">Добавить</button>
+                            <p class="form-message" aria-live="polite"></p>
+                        </form>
+                        <ul class="comments-list"></ul>
+                    </section>
+                </article>
 
-                        <h3 id="post2">Семантика в HTML</h3>
+                <article aria-labelledby="post2" class="post" data-article-id="html-semantics" data-category="semantics">
+                    <h3 id="post2">Семантика в HTML</h3>
+                    <p>
+                        Семантика в HTML — это не про внешний вид, а про смысл структуры
+                        страницы. Вместо безликих используются теги, которые сразу объясняют,
+                        что находится внутри: шапка сайта, навигация, статья или основной контент.
+                    </p>
+                    <p>
+                        В этой статье я разберу, какие семантические теги существуют, когда их
+                        использовать и почему это важно для читаемости кода, SEO и доступности.
+                    </p>
+                    <span class="link">
+                        <a href="Stub_blank.html" aria-label="Читать статью Семантика в HTML">Читать далее</a>
+                    </span>
 
-                        <p>Семантика в HTML — это не про внешний вид, а про смысл структуры
-                            страницы. Вместо безликих используются теги, которые сразу объясняют,
-                            что находится внутри: шапка сайта, навигация, статья или основной контент.
-                        </p>
+                    <div class="article-actions">
+                        <button class="like-button" type="button" aria-pressed="false">♡ Лайк</button>
+                    </div>
 
-                        <p>В этой статье я разберу, какие семантические теги существуют, когда их
-                            использовать и почему это важно для читаемости кода, SEO и доступности.
-                            Покажу на простых примерах, как сделать разметку понятной не только
-                            разработчику, но и браузеру.
-                        </p>
+                    <section class="comments" aria-labelledby="comments-html-semantics">
+                        <h4 id="comments-html-semantics">Комментарии</h4>
+                        <form class="comment-form">
+                            <label>
+                                Имя
+                                <input type="text" name="commentName" placeholder="Твоё имя" required minlength="2" maxlength="30">
+                            </label>
+                            <label>
+                                Комментарий
+                                <textarea name="commentText" placeholder="Напиши комментарий" required minlength="3" maxlength="300" rows="3"></textarea>
+                            </label>
+                            <button type="submit">Добавить</button>
+                            <p class="form-message" aria-live="polite"></p>
+                        </form>
+                        <ul class="comments-list"></ul>
+                    </section>
+                </article>
 
-                        <span class="link">
-                            <a href="Stub_blank.html" aria-label="Читать статью Семантика в HTML">
-                            Читать далее
-                            </a>
-                        </span>
-                    </article>
+                <article aria-labelledby="post3" class="post" data-article-id="html-forms" data-category="forms">
+                    <h3 id="post3">Формы в HTML</h3>
+                    <p>
+                        Формы в HTML — это основной способ взаимодействия пользователя
+                        с сайтом: ввод данных, регистрация, поиск или отправка сообщений.
+                        Сначала может показаться, что это просто набор полей, но на деле у
+                        форм есть чёткая структура и важные правила.
+                    </p>
+                    <p>
+                        В этой статье я разберу, как работает тег form, зачем нужны input, label
+                        и кнопки отправки, а также покажу, как правильно связывать элементы между собой.
+                    </p>
+                    <span class="link">
+                        <a href="Stub_blank.html" aria-label="Читать статью Формы в HTML">Читать далее</a>
+                    </span>
 
-                    <article aria-labelledby="post3" class="post">
+                    <div class="article-actions">
+                        <button class="like-button" type="button" aria-pressed="false">♡ Лайк</button>
+                    </div>
 
-                        <h3 id="post3">Формы в HTML</h3>
-                        <p>Формы в HTML — это основной способ взаимодействия пользователя
-                            с сайтом: ввод данных, регистрация, поиск или отправка сообщений.
-                            Сначала может показаться, что это просто набор полей, но на деле у
-                            форм есть чёткая структура и важные правила.
-                        </p>
-
-                        <p>В этой статье я разберу, как работает тег form, зачем нужны input, label
-                            и кнопки отправки, а также покажу, как правильно связывать элементы
-                            между собой. Отдельно затрону базовую валидацию и типичные ошибки,которые часто допускают в начале.
-                        </p>
-                        
-                        <span class="link">
-                            <a href="Stub_blank.html" aria-label="Читать статью Семантика в HTML">
-                            Читать далее
-                            </a>
-                        </span>
-                    </article>
+                    <section class="comments" aria-labelledby="comments-html-forms">
+                        <h4 id="comments-html-forms">Комментарии</h4>
+                        <form class="comment-form">
+                            <label>
+                                Имя
+                                <input type="text" name="commentName" placeholder="Твоё имя" required minlength="2" maxlength="30">
+                            </label>
+                            <label>
+                                Комментарий
+                                <textarea name="commentText" placeholder="Напиши комментарий" required minlength="3" maxlength="300" rows="3"></textarea>
+                            </label>
+                            <button type="submit">Добавить</button>
+                            <p class="form-message" aria-live="polite"></p>
+                        </form>
+                        <ul class="comments-list"></ul>
+                    </section>
+                </article>
             </section>
 
-            <aside aria-labelledby="aside-title" id="aside-title">
-                <h2>Дополнительно</h2>
-                    <p>На сайте также есть страница с биографией, навыками и контактной формой.
-                </p>
+            <aside class="extra-info" aria-labelledby="extra-title">
+                <h2 id="extra-title">Дополнительно</h2>
+                <p>На сайте также есть страница с биографией, навыками и контактной формой.</p>
             </aside>
         </div>
     </main>
@@ -121,4 +179,4 @@
         <p>© 2026 Личный блог</p>
     </footer>
 </body>
-</body>
+</html>

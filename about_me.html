@@ -3,39 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Информация обо мне: биография, навыки и текущие цели.">
     <meta name="author" content="Всеволод Т-П">
-
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="css/general_styles.css">
     <link rel="stylesheet" href="css/about_me.css">
-
+    <script src="js/main.js" defer></script>
     <title>Личный блог — Обо мне</title>
 </head>
 
 <body>
     <header>
         <div class="wrapper">
-            <img src="images/logo.png" alt="Логотип">
+            <a href="index.html" class="logo-link" aria-label="На главную">
+                <img src="images/logo.png" alt="Логотип" class="logo">
+            </a>
 
             <nav class="nav" aria-label="Основная навигация">
-                <button class="burger" id="burger_btn" aria-label="Открыть меню">
-                    ☰
-                </button>
-
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li class="active">
-                        <a href="about_me.html" aria-current="page">Обо мне</a>
-                    </li>
-                    <li><a href="contacts.html">Контакты</a></li>
+                <button class="burger" id="burger_btn" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html">Главная</a></li>
+                    <li class="nav-item active"><a href="about_me.html" aria-current="page">Обо мне</a></li>
+                    <li class="nav-item"><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main aria-labelledby="page-title">
+    <main class="main-about" aria-labelledby="page-title">
+        <h1 class="visually-hidden" id="page-title">Обо мне</h1>
 
-        <!-- Био -->
         <section class="bio" id="bio-section" aria-labelledby="bio-title">
             <h2 class="title_h2" id="bio-title">Био</h2>
 
@@ -53,7 +50,6 @@
             </p>
         </section>
 
-        <!-- Навыки -->
         <section class="skills" aria-labelledby="skills-title">
             <h2 class="title_h2" id="skills-title">Навыки</h2>
             <div class="list-skills">
@@ -88,13 +84,10 @@
             </div>
         </section>
 
-        <!-- Текущие цели -->
         <aside class="goals" aria-labelledby="goals-title">
             <h2 class="title_h2" id="goals-title">Текущие цели</h2>
             <div class="goals-content">
-                <p>
-                    Получить высшее образование и начать работу в области IT.
-                </p>
+                <p>Получить высшее образование и начать работу в области IT.</p>
             </div>
         </aside>
     </main>
