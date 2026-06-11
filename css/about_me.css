@@ -41,14 +41,14 @@
     display: block;
     width: 100%;
     height: auto;
-    -webkit-mask-image:
+    /* -webkit-mask-image:
         linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent),
         linear-gradient(to bottom, transparent, black 40px, black calc(100% - 40px), transparent);
     -webkit-mask-composite: source-in;
     mask-image:
         linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent),
         linear-gradient(to bottom, transparent, black 40px, black calc(100% - 40px), transparent);
-    mask-composite: intersect;
+    mask-composite: intersect; */
 }
 
 .description {

@@ -143,7 +143,7 @@
     .entry {
         width: min(64vw, 960px);
         min-height: 520px;
-        padding: 270px 72px 76px;
+        padding: 350px 72px 76px;
         font-size: 1.45rem;
     }
 
@@ -178,7 +178,7 @@
 
 @media (min-width: 1800px) {
     .news {
-        width: min(82vw, 1580px);
+        width: min(150vw, 1800px);
     }
 
     .post {

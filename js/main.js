@@ -68,7 +68,7 @@ function initLikes() {
             const isLiked = Boolean(likedArticles[articleId]);
             button.classList.toggle('liked', isLiked);
             button.setAttribute('aria-pressed', String(isLiked));
-            button.textContent = isLiked ? '♥ Лайкнуто' : '♡ Лайк';
+            button.textContent = isLiked ? '★' : '☆';
         }
 
         renderLike();
